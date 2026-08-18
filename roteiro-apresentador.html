@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore — Roteiro do Apresentador</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sunset-50:#FFF3EF; --sunset-100:#FFE0D5; --sunset-400:#F37A55; --sunset-500:#EC5E37;
+  --sunset-600:#D14A26; --sunset-700:#A93A1D;
+  --sea-100:#C6EBE4; --sea-400:#2BA796; --sea-500:#1C9485; --sea-600:#137567;
+  --sea-700:#105C52; --sea-800:#0E4742; --sea-900:#0A3431;
+  --sand-100:#FCEBBE; --sand-300:#F3C350; --sand-400:#EDAE2C; --sand-500:#D6921A;
+  --neutral-100:#F2ECE2; --neutral-200:#E7DECF; --neutral-300:#D6CBB7;
+  --neutral-400:#B6A88F; --neutral-500:#8B8069; --neutral-600:#67604F;
+  --ink:#14302E; --white:#FFFFFF;
+  --font-display:"Sora",system-ui,sans-serif;
+  --font-sans:"Plus Jakarta Sans",system-ui,sans-serif;
+  --font-mono:"Space Mono",ui-monospace,monospace;
+  --surface-page:#FAF7F1; --surface-card:#FFFFFF; --border-subtle:#EAE2D5;
+  --text-strong:#14302E; --text-body:#213F3B; --text-muted:#67604F;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--surface-page); font-family:var(--font-sans); color:var(--text-body);
+  -webkit-font-smoothing:antialiased; }
+.wrap { max-width:900px; margin:0 auto; padding:56px 40px 80px; }
+
+/* header */
+.masthead {
+  background:linear-gradient(140deg,var(--sea-700) 0%,var(--sea-900) 65%,#08302d 100%);
+  border-radius:22px; padding:40px 44px; color:#fff; position:relative; overflow:hidden;
+  box-shadow:0 18px 46px rgba(20,48,46,0.22);
+}
+.masthead::after { content:""; position:absolute; top:-120px; right:-90px; width:380px; height:380px;
+  border-radius:50%; background:radial-gradient(circle,rgba(236,94,55,0.42) 0%,rgba(236,94,55,0) 68%); }
+.brand { display:flex; align-items:center; gap:11px; font-family:var(--font-display); font-weight:800;
+  font-size:20px; color:#fff; margin-bottom:22px; position:relative; z-index:1; }
+.brand svg { width:32px; height:32px; }
+.eyebrow { font-weight:700; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--sand-300); }
+.masthead h1 { font-family:var(--font-display); font-weight:800; font-size:34px; line-height:1.1;
+  margin-top:10px; position:relative; z-index:1; letter-spacing:-0.02em; }
+.masthead p { color:rgba(255,255,255,0.85); margin-top:12px; font-size:15px; line-height:1.6;
+  max-width:620px; position:relative; z-index:1; }
+.meta-row { display:flex; gap:14px; margin-top:24px; position:relative; z-index:1; flex-wrap:wrap; }
+.meta-pill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.18); border-radius:999px; padding:8px 15px;
+  font-family:var(--font-mono); font-weight:700; font-size:12.5px; color:#fff; }
+.meta-pill b { color:var(--sand-300); }
+
+/* tips */
+.tips { background:var(--sunset-50); border:1px solid var(--sunset-100); border-left:4px solid var(--sunset-400);
+  border-radius:14px; padding:18px 22px; margin-top:26px; }
+.tips h3 { font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--sunset-700);
+  text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; }
+.tips ul { list-style:none; display:flex; flex-wrap:wrap; gap:6px 28px; }
+.tips li { font-size:13.5px; color:var(--text-muted); position:relative; padding-left:16px; }
+.tips li::before { content:"›"; position:absolute; left:0; color:var(--sunset-500); font-weight:700; }
+
+/* section label */
+.part-label { display:flex; align-items:center; gap:12px; margin:38px 0 6px; }
+.part-label .tag { font-family:var(--font-mono); font-weight:700; font-size:12px; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--sunset-500); }
+.part-label .rule { flex:1; height:1px; background:var(--border-subtle); }
+
+/* slide card */
+.card { background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:16px;
+  padding:26px 28px; margin-top:16px; box-shadow:0 2px 12px rgba(20,48,46,0.06);
+  border-left:5px solid var(--sea-400); }
+.card.divider { border-left-color:var(--sand-400); background:#fffdf6; }
+.card.finale  { border-left-color:var(--sunset-500); }
+.card-head { display:flex; align-items:center; justify-content:space-between; gap:16px;
+  margin-bottom:6px; flex-wrap:wrap; }
+.card-head .left { display:flex; align-items:center; gap:12px; }
+.snum { font-family:var(--font-mono); font-weight:700; font-size:12px; color:#fff;
+  background:var(--sea-600); border-radius:8px; padding:5px 9px; letter-spacing:0.04em; }
+.card.divider .snum { background:var(--sand-500); }
+.card.finale .snum  { background:var(--sunset-500); }
+.stitle { font-family:var(--font-display); font-weight:800; font-size:18px; color:var(--text-strong);
+  line-height:1.2; }
+.time { font-family:var(--font-mono); font-weight:700; font-size:12.5px; color:var(--sea-700);
+  background:var(--sea-100); border-radius:999px; padding:5px 12px; white-space:nowrap; }
+.cue { font-size:12.5px; color:var(--neutral-500); font-weight:600; margin:10px 0 14px;
+  display:flex; gap:8px; align-items:flex-start; }
+.cue b { color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; font-size:11px;
+  white-space:nowrap; padding-top:1px; }
+.speech { font-size:17px; line-height:1.72; color:var(--text-body); }
+.speech strong { color:var(--sea-700); }
+.card.finale .speech strong { color:var(--sunset-600); }
+
+.foot-note { font-size:11.5px; color:var(--neutral-500); line-height:1.55; margin-top:40px;
+  border-top:1px solid var(--border-subtle); padding-top:18px; }
+
+@media print {
+  body { background:#fff; }
+  .wrap { max-width:none; padding:0 24px; }
+  .card, .masthead, .tips { break-inside:avoid; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="13" r="6.4" fill="var(--sunset-500)"/>
+        <path d="M3 24 q4.3 -3.4 8.6 0 t8.6 0 t8.6 0" stroke="var(--sea-300)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M3 28.5 q4.3 -3.4 8.6 0 t8.6 0 t8.6 0" stroke="var(--sea-200)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      Explore
+    </div>
+    <div class="eyebrow">Roteiro do Apresentador</div>
+    <h1>Pitch para investidores · fala slide a slide</h1>
+    <p>Narração pensada para acompanhar o deck de 12 slides. Os tempos são um guia — fale no seu ritmo, sem correr. O total-alvo é de cinco minutos.</p>
+    <div class="meta-row">
+      <span class="meta-pill">⏱ <b>~5:05</b> total</span>
+      <span class="meta-pill">🎞 <b>12</b> slides</span>
+      <span class="meta-pill">🗣 ~<b>150</b> palavras/min</span>
+    </div>
+  </div>
+
+  <div class="tips">
+    <h3>Antes de começar</h3>
+    <ul>
+      <li>Respire e faça uma pausa antes de cada número-chave.</li>
+      <li>Olhe para o investidor, não para o slide.</li>
+      <li>Destaques em <strong style="color:var(--sea-700);">verde</strong> = enfatize.</li>
+      <li>Nos divisores, apenas transicione — são rápidos.</li>
+      <li>Feche olhando nos olhos: "Vamos conversar?"</li>
+    </ul>
+  </div>
+
+  <!-- PARTE: ABERTURA -->
+  <div class="part-label"><span class="tag">Abertura &amp; Contexto</span><span class="rule"></span></div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">01</span><span class="stitle">Capa — Explore</span></div>
+      <span class="time">≈ 30s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Capa "O marketplace das experiências turísticas" + LTV/CAC 5x, GMV R$3,7M, MOIC 8,4x.</span></div>
+    <div class="speech">Boa tarde, e obrigado pelo tempo de vocês. Deixa eu começar com uma cena: quando um turista chega em Natal, ele já reservou o hotel, já comparou as passagens… mas o passeio de buggy, o mergulho, o city tour, isso ainda é fechado no WhatsApp, na recepção do hotel, no dinheiro. A <strong>Explore</strong> é o marketplace que organiza esse mercado — conecta os prestadores locais aos turistas e fica com <strong>15% de comissão</strong> em cada reserva. Nos próximos cinco minutos eu vou mostrar três coisas: quanto custa operar, o quanto isso cresce, e quanto o investidor ganha.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">02</span><span class="stitle">Posicionamento &amp; Mercado</span></div>
+      <span class="time">≈ 35s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Comparativo TripAdvisor / Booking / Trivago / Explore + ~1.500 prestadores alcançáveis, 628.952 passageiros, ~147 mil serviços/mês, meta 2%.</span></div>
+    <div class="speech">Existe um vazio nesse mercado. O TripAdvisor te dá avaliação. O Booking te dá hospedagem. O Trivago compara tarifa de hotel. <strong>Nenhum deles fecha a venda da experiência local</strong> — e é exatamente aí que a gente entra. A Explore é um marketplace de dois lados: de um lado, bugueiros, guias, hotéis e agências; do outro, o turista que quer reservar com segurança. E os dois lados têm tamanho. Na oferta, a gente estima um universo alcançável de cerca de <strong>1.500 prestadores</strong> no destino, que hoje operam no informal. Na demanda, só no primeiro trimestre de 2025, o aeroporto de Natal recebeu mais de <strong>628 mil passageiros</strong>, com cerca de 147 mil serviços turísticos por mês na região. E a nossa meta é modesta: <strong>2% disso</strong> — cerca de 2.940 reservas por mês até o fim do primeiro ano.</div>
+  </div>
+
+  <!-- PARTE 01 -->
+  <div class="part-label"><span class="tag">Parte 01 · Custos</span><span class="rule"></span></div>
+
+  <div class="card divider">
+    <div class="card-head">
+      <div class="left"><span class="snum">03</span><span class="stitle">Divisor — Custos &amp; Unit Economics</span></div>
+      <span class="time">≈ 5s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Slide de seção "01 — Custos &amp; Unit Economics".</span></div>
+    <div class="speech">Então vamos à primeira parte: os custos, e a economia de cada reserva.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">04</span><span class="stitle">Unit Economics — a conta de cada reserva</span></div>
+      <span class="time">≈ 35s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Cards de ticket/comissão/LTV/CAC + gráfico LTV vs CAC (5×).</span></div>
+    <div class="speech">A conta de cada reserva é simples e saudável. Ticket médio de <strong>250 reais</strong>, comissão de 15% — isso dá <strong>37 reais e 50 de receita</strong> pra Explore por reserva. Cada turista faz, em média, duas reservas na viagem; então o valor de vida do cliente, o LTV, é de 75 reais. E o custo pra adquirir esse turista, a nossa meta, é de 15 reais. Olhem essa relação: <strong>LTV sobre CAC de cinco vezes</strong>. Cada real investido em aquisição volta como cinco em valor. Descontado o custo de aquisição, sobram cerca de <strong>30 reais de contribuição por reserva</strong>, antes dos demais custos.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">05</span><span class="stitle">CAC &amp; Infraestrutura</span></div>
+      <span class="time">≈ 30s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Cenários de CAC (R$25/R$15/R$10) + gráfico de infra por escala.</span></div>
+    <div class="speech">E por que 15 reais é uma meta realista? Porque a gente <strong>não depende só de anúncio pago</strong>. O prestador entra de forma orgânica — prospecção, parceria com hotel, prefeitura, indicação — com custo direto perto de zero. E o turista vem de um mix: QR Code na recepção do hotel, canais institucionais, orgânico, indicação, e mídia paga só complementando. Isso puxa o CAC médio pra baixo. Do lado da infraestrutura, a operação é enxuta: de <strong>385 a 2.365 reais por mês</strong>, conforme a escala. Tecnologia não é o nosso gargalo de custo.</div>
+  </div>
+
+  <!-- PARTE 02 -->
+  <div class="part-label"><span class="tag">Parte 02 · Crescimento</span><span class="rule"></span></div>
+
+  <div class="card divider">
+    <div class="card-head">
+      <div class="left"><span class="snum">06</span><span class="stitle">Divisor — Projeção &amp; Crescimento</span></div>
+      <span class="time">≈ 5s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Slide de seção "02 — Projeção de Investimento &amp; Crescimento".</span></div>
+    <div class="speech">Com a economia de pé, a segunda parte: como isso cresce.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">07</span><span class="stitle">Rampa do Ano 1</span></div>
+      <span class="time">≈ 35s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Curva de receita mês a mês + GMV R$3,74M / Receita R$562k / 14.990 reservas.</span></div>
+    <div class="speech">Este é o cenário-base do primeiro ano. A gente começa devagar — 100 reservas no primeiro mês — e sobe de forma consistente até quase 3 mil reservas por mês no mês doze. Reparem na curva: <strong>ela acelera</strong>. No acumulado do ano, isso é um GMV de <strong>3 milhões e 747 mil reais</strong>, que se traduz em <strong>562 mil reais de receita bruta</strong> pra Explore, com quase 15 mil reservas. E não é hipótese solta: é uma rampa mês a mês, ancorada em 2% de um mercado que já existe.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">08</span><span class="stitle">Cenários de Escala</span></div>
+      <span class="time">≈ 25s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Barras de receita anual (1k/3k/5k) + consolidação trimestral.</span></div>
+    <div class="speech">E o modelo escala bem. Com mil usuários ativos por mês, são <strong>450 mil reais</strong> de receita anual. Com três mil, <strong>1 milhão e 350 mil</strong>. Com cinco mil, <strong>2 milhões e 250 mil</strong>. É o mesmo motor girando mais rápido. E o crescimento é acelerado dentro do próprio ano: o quarto trimestre, sozinho, já vale mais do que os três primeiros somados.</div>
+  </div>
+
+  <!-- PARTE 03 -->
+  <div class="part-label"><span class="tag">Parte 03 · Retorno</span><span class="rule"></span></div>
+
+  <div class="card divider">
+    <div class="card-head">
+      <div class="left"><span class="snum">09</span><span class="stitle">Divisor — Retorno para o Investidor</span></div>
+      <span class="time">≈ 5s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Slide de seção "03 — Retorno para o Investidor".</span></div>
+    <div class="speech">E agora, o que mais interessa pra vocês: o retorno do investidor.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">10</span><span class="stitle">Faixas &amp; Dois Caminhos</span></div>
+      <span class="time">≈ 30s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Três faixas (R$100k/R$250k/R$500k) + distribuição de lucros e valorização.</span></div>
+    <div class="speech">A gente estruturou três faixas de entrada: <strong>100 mil por 10%</strong>, <strong>250 mil por 20%</strong>, ou <strong>500 mil por 25%</strong> — cada uma com o seu valuation. E deixa eu ser bem claro: participação societária não é fatia do faturamento. O retorno vem por <strong>dois caminhos</strong>. O primeiro é a distribuição de lucros — no modelo, 40% do lucro líquido vai pros sócios, semestral ou anual conforme o aporte. O segundo é a valorização da sua participação, conforme a empresa cresce de valor.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="left"><span class="snum">11</span><span class="stitle">MOIC &amp; Exemplo de 36 meses</span></div>
+      <span class="time">≈ 35s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>Escada de valuation + exemplo R$250k → R$97.200 + R$2M (8,39x / 739%).</span></div>
+    <div class="speech">Deixa eu concretizar, na faixa de 250 mil por 20%. Ao longo de três anos, só em distribuição de lucros, o investidor recebe <strong>97 mil e 200 reais</strong>. E a participação: se a Explore chegar avaliada em 10 milhões no ano três, os seus 20% valem <strong>2 milhões</strong>. Somando os dois, o valor econômico passa de 2 milhões — cerca de <strong>8,4 vezes o capital</strong>, um ROI perto de 739%. E olhem o potencial: se a empresa chegar a 50 milhões, essa participação vale 10 milhões, 40 vezes o aporte. São cenários de planejamento, claro — mas mostram a <strong>assimetria da oportunidade</strong>.</div>
+  </div>
+
+  <div class="card finale">
+    <div class="card-head">
+      <div class="left"><span class="snum">12</span><span class="stitle">Fechamento &amp; Convite</span></div>
+      <span class="time">≈ 30s</span>
+    </div>
+    <div class="cue"><b>No telão:</b><span>As três faixas + próximos passos + "Vamos conversar."</span></div>
+    <div class="speech">Então, resumindo: um <strong>mercado real e desorganizado</strong>, uma economia por reserva saudável de cinco pra um, uma <strong>rampa de crescimento clara</strong>, e dois caminhos de retorno pro investidor. As três faixas estão abertas: 100, 250 ou 500 mil. Os próximos passos são a validação contábil e jurídica e a definição do instrumento societário. A Explore quer transformar a maneira como o turista vive Natal — e tem espaço pra vocês entrarem agora. <strong>Vamos conversar?</strong> Muito obrigado.</div>
+  </div>
+
+  <p class="foot-note">Roteiro complementar ao deck de investimento da Explore. Todos os números citados são cenários de planejamento (não garantia de rentabilidade) e acompanham as ressalvas do próprio material. Ajuste o ritmo conforme o público: para 3 minutos, encurte os divisores e o slide 08; para 7 minutos, abra espaço para perguntas após as partes 02 e 03.</p>
+
+</div>
+</body>
+</html>
